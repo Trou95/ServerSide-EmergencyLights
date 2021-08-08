@@ -23,7 +23,7 @@ new static __unu;
 new static const emergencyVehicles[] = {596,597,598,599,601,528};
 new static const emergencyModes[] = {0x1,0x4,0x9,0x0,0x9,0x40};
 new static const modelSize = sizeof(emergencyVehicles) - 1;
-new const modeSize = sizeof(emergencyModes) - 1;
+new static const modeSize = sizeof(emergencyModes) - 1;
 
 
 PlayerVehicleElFlash(playerid)
