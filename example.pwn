@@ -48,9 +48,3 @@ CMD:setel(playerid)
 
 
 
-
-
-
-
-
-
