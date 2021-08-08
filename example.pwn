@@ -38,12 +38,9 @@ public Timer_EL()
 }
 
 
-CMD:setel(playerid)
-{
+CMD:setel(playerid){
  TogglePlayerEl(playerid);
- new Float:x,Float:y,Float:z;
- GetPlayerPos(playerid,x,y,z);
- CreateVehicle(596,x,y,z,0,0,1,-1,0);
+ 
 }
 
 
