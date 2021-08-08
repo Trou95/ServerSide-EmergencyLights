@@ -105,5 +105,4 @@ stock SetPlayerEl(playerid,mode = false){
  }
 }
  
-
-
+ 
