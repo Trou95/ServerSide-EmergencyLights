@@ -38,7 +38,7 @@ public Timer_EL()
 }
 
 
-CMD:setel(playerid){
+CMD:elm(playerid){
  TogglePlayerEl(playerid);
  
 }
