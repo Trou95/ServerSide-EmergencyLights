@@ -22,8 +22,6 @@ new static __unu;
 
 new static const emergencyVehicles[] = {596,597,598,599,601,528};
 new static const emergencyModes[] = {0x1,0x4,0x9,0x0,0x9,0x40};
-new static const modelSize = sizeof(emergencyVehicles) - 1;
-new static const modeSize = sizeof(emergencyModes) - 1;
 
 
 PlayerVehicleElFlash(playerid)
@@ -40,7 +38,7 @@ PlayerVehicleElFlash(playerid)
     new vehpanel,vehdoors,vehtires;
     GetVehicleDamageStatus(vehicle,vehpanel,vehdoors,__unu,vehtires);
     UpdateVehicleDamageStatus(vehicle,vehpanel,vehdoors,emergencyModes[bIsPlayerEL{playerid}++],vehtires);
-    if(bIsPlayerEL{playerid} > modeSize) bIsPlayerEL{playerid} = 0;
+    if(bIsPlayerEL{playerid} >= sizeof(emergencyModes)) bIsPlayerEL{playerid} = 0;
    }
    #else
    if(vehicle == playerELVehicle[playerid])
@@ -48,7 +46,7 @@ PlayerVehicleElFlash(playerid)
     new vehpanel,vehdoors,vehtires;
     GetVehicleDamageStatus(vehicle,vehpanel,vehdoors,__unu,vehtires);
     UpdateVehicleDamageStatus(vehicle,vehpanel,vehdoors,emergencyModes[bIsPlayerEL{playerid}++],vehtires);
-    if(bIsPlayerEL{playerid} > modeSize) bIsPlayerEL{playerid} = 0;
+    if(bIsPlayerEL{playerid} >= sizeof(emergencyModes)) bIsPlayerEL{playerid} = 0;
    }
    else bIsPlayerEL{playerid} = MODE_OFF;
    #endif
@@ -63,7 +61,7 @@ IsPlayerElOn(playerid)
 
 stock IsEmergencyVehicle(model)
 {
- for(new i = modelSize; i != -1; i--)
+ for(new i = sizeof(emergencyVehicles) - 1; i != -1; i--)
     if(model == emergencyVehicles[i])
 		return true;
  return false;
